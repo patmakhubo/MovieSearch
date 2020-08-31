@@ -52,6 +52,42 @@ main starts
 #search:hover {
     background-color:#008000;
 }
+#movies-searchable {
+    margin-top: 20px;
+}
+/* Image results section start */
+.section {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+}
+
+section img {
+    width: 300px;
+}
+
+img:hover {
+    transform: scale(1.2);
+    transition: .15s ease-in-out;
+    margin-left: 0 40px;
+    cursor: pointer;
+    border: 1px outset grey;
+}
+
+.content {
+    border: 1px solid red;
+    display: none;
+}
+.content div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px;
+}
+.content-display {
+    display: block;
+}
 /* 
 ----------------------------------------------------------
 main ends
