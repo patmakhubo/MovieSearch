@@ -8,7 +8,30 @@ const endpoint = 'http://api.themoviedb.org/3/search/movie?api_key=44bd07fbb8102
 // DOM Elements Selection
 const inputElement = document.querySelector('#inputValue');
 const searchElement = document.querySelector('#search');
+const moviesSearchable = document.querySelector('#movies-searchable');
+function movieSection(movies){
+    return movies.map((movie) => { 
+        return `
+            <img src=${movie.poster_path} data-movie-id=${movie.id}/>
+        `;
+    })
+}
+function createMovieContainer(movies) {
+    const movieElement = document.createElement('div');
+    movieElement.setAttribute('class', 'movie');
 
+    const movieTemplate = `
+        <section class="section">
+            ${ movieSection(movies)}
+        </section>
+        <div class="content">
+            <p id="content-close">X</p>
+        </div>
+    `;
+
+    movieElement.innerHTML = movieTemplate;
+    return movieElement;
+}
 searchElement.onclick = function(event) {
     event.preventDefault();
     const value = inputElement.value;
@@ -16,6 +39,9 @@ searchElement.onclick = function(event) {
     fetch(url)
         .then((res) => res.json())
         .then((data) => {
+            const res = data.results;
+            const movieBlock = createMovieContainer(res);
+            moviesSearchable.appendChild(movieBlock);
             console.log('Data: ', data);
         })
         .catch((error) => {
