@@ -1,0 +1,59 @@
+/* 
+----------------------------------------------------------
+header starts
+----------------------------------------------------------
+*/
+#title {
+    text-align: center;
+}
+/* 
+----------------------------------------------------------
+header ends
+----------------------------------------------------------
+*/
+/* 
+----------------------------------------------------------
+main starts
+----------------------------------------------------------
+*/
+.form-group {
+    margin: 0 auto;
+    display: inline;
+}
+/* Input Value */
+#inputValue{
+    width: 50%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    outline: none;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+/* Search button */
+#search {
+    color: #fff;
+    background-color:#007bff;
+    outline: none;
+    min-height: 38px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+#search:hover {
+    background-color:#008000;
+}
+/* 
+----------------------------------------------------------
+main ends
+----------------------------------------------------------
+*/
