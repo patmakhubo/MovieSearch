@@ -27,20 +27,18 @@
     <main>
         <div class="search-bar">
             <div class="container">
-                    <center>
-                        <div class="content">
-                            <h1>MoviesInfo: Information about over 10k+ movies</h1>
-                            <p>
-                                Welcome to
-                                <span style="font-weight:bold; color: #6AC045">MoviesInfo</span> | It is site where you can view information about your favourite movie.
-                                MoviesInfo are best known for the excellent
-                                <span style="font-weight:bold; color: #6AC045">Information</span> for each and every released and not released movies. We are providing
-                                this information by the help of
-                                <span style="font-weight:bold; color: #6AC045">MovieDB </span> which known for their movies resources.
-                                <span style="font-weight:bold; color: #6AC045">Browse</span> Movie and get detail aspect of your favourite movie.
-                            </p>
-                        </div>
-                    </center>
+                <div>
+                    <h1>Posters and Trailors for over 10k+ movies can be found here</h1>
+                    <p>
+                        Welcome to
+                        <span>The Movie Search API</span>. It's site where you can view information about your favourite movie.
+                        The Movie Search API are best known for the excellent
+                        <span>Information</span> for each and every released and not released movies. We are providing
+                        this information by the help of
+                        <span>TheMovieDB </span> which known for their movies resources.
+                        <span>Browse</span> Movie and get detail aspect of your favourite movie.
+                    </p>
+                </div>
                 <form>
                     <!-- <div class="form-group">
                         <select name="typeValue" id="typeValue">
@@ -66,24 +64,46 @@
     </main>
     <!-- main ends -->
     <section class="request">
-        <div class="container req-box">
-            <form action="../controller/req.php" method="post">
-                <div class="row">
-                    <div class="req-column">
-                        <h3 style="margin-bottom:50px;"><span style="font-weight:bold; color: #6AC045">Movie Request</span></h3>
-                        <label for="title">Movie Title:</label><br>
-                        <input type="text" name="title" class="input" requireds=""><br>
-                        <label for="message">Request Message(Optional):</label><br>
-                        <textarea name="msg" cols="30" rows="5" class="input"></textarea>
-                        <input type="submit" class="btn" value="Send Request">
-                    </div>
-                    <div class="req-column">
-                        <p class="content">We try our best to upload every request our users make. Sadly we can not give a 100% guarantee that we will upload your movie in a given time frame, but we will try our best!</p>
-                        <p class="content" style="margin-top:30px;">To help us, please provide as much information about the movie you want to be uploaded. It will help if you can give IMDb links.</p>
-                    </div>
-                </div>   
-            </form>
+        <div class="req-column">
+            <h3>Please Note:</h3>
+            <p class="cont">We try our best to upload every request our users make. Sadly we can not give a 100% guarantee that we will upload your movie in a given time frame, but we will try our best!</p>
+            <p class="cont" style="margin-top:30px;">To help us, please provide as much information about the movie you want to be uploaded.</p>
         </div>
+        <form id="regForm" action="">
+
+            <h1>Register:</h1>
+            
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab">
+                <h3>Enter Your Name And Email Address Below</h3>
+                <label>Name:</label>
+                <p><input type="text" placeholder="Full name..." oninput="this.className = ''"></p>
+                <label>Email Address:</label>
+                <p><input type="email" placeholder="Email-Address..." oninput="this.className = ''"></p>
+            </div>
+            
+            <div class="tab">
+                <label>Movie Title:</label>
+                <p><input type="text" placeholder="Full name..." oninput="this.className = ''"></p>
+                <label>Request Message(Optional):</label>
+                <p><textarea type="text" placeholder="Full name..." oninput="this.className = ''"></textarea></p>
+            </div>
+            
+            <div style="overflow:auto;">
+              <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+              </div>
+            </div>
+            
+            <!-- Circles which indicates the steps of the form: -->
+            <div class="dots">
+              <span class="step"></span>
+              <span class="step"></span>
+            </div>
+            
+        </form>
+        <script src="/assets/js/formwizard.js"></script>
     </section>
     <!-- footer starts -->
     <footer>Copyright 2020 &#169; Movie Search API</footer>
