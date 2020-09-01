@@ -18,3 +18,24 @@ function searchMovie(value) {
 function requestMovies(url, onComplete, onError){
     fetch(url).then((res) => res.json()).then(onComplete).catch(onError);
 }
+
+function getUpcomingMovies() {
+    const path = '/movie/upcoming';
+    const url = generateURL(path);
+
+    requestMovies(url, renderSearchMovies, handleError);
+}
+
+
+function getTopRatedMovies() {
+    const path = '/movie/top_rated';
+    const url = generateURL(path);
+
+    requestMovies(url, renderSearchMovies, handleError);
+}
+function  {
+    const path = '/movie/popular';
+    const url = generateURL(path);
+
+    requestMovies(url, renderSearchMovies, handleError);
+}

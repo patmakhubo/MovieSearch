@@ -59,6 +59,7 @@ main starts
 }
 #movies-searchable {
     margin-top: 20px;
+    width: 93% !important;
 }
 /* Image results section start */
 .section {

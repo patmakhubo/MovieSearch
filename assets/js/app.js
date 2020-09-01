@@ -18,7 +18,7 @@ function createMovieContainer(movies) {
 
     const movieTemplate = `
         <section class="section" width=30 height=50>
-            ${ movieSection(movies)}
+            ${ movieSection(movies)}
         </section>
         <div class="content">
             <p id="content-close">X</p>
@@ -111,3 +111,7 @@ function handleError(error){
 //     }
 //     return "";
 // }
+
+// getUpcomingMovie();
+// getTopRatedMovies(); 
+// getPopularMovies();

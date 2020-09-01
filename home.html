@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
         <script>
-          var ScrollMsg= "Movie Search API"
+          var ScrollMsg= "Movie Search API - "
           var CharacterPosition=0;
           function StartScrolling() {
           document.title=ScrollMsg.substring(CharacterPosition,ScrollMsg.length)+
@@ -58,13 +58,15 @@
                     </div>
                 </form>
             </div>
+            <div class="result-movie" style="display: flex;">
+            <button id="slideBack" type="button" style="background-color: none !important;"><</button>
             <div id="movies-searchable">
             </div>
-            <button id="slideBack" type="button">Prev</button>
-            <button id="slide" type="button">Next</button>
+            <button id="slide" type="button" style="top:0;left:50%;float: right;">></button></div>
             <script src="/assets/js/buttonScroll.js"></script>
         </div>
     </main>
+
     <!-- main ends -->
     <section class="request">
         <div class="req-column">
