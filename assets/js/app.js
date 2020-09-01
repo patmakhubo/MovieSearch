@@ -49,14 +49,7 @@ function renderSearchMovies(data){
 searchElement.onclick = function(event) {
     event.preventDefault();
     const value = inputElement.value;
-    const path = '/search/movie';
-    const url = generateURL(path) + "&query=" + value;
-    fetch(url)
-        .then((res) => res.json())
-        .then(renderSearchMovies)
-        .catch((error) => {
-            console.log('Error: ', error);
-        });
+    searchMovie(value);
     inputElement.value = '';
     console.log('Value: ', value);
 }
@@ -115,6 +108,7 @@ function handleError(error){
 function searchMovie(value) {
     const path = '/search/movie';
     const url = generateURL(path) + "&query=" + value;
+
     requestMovies(url, renderSearchMovies, handleError);
 }
 function requestMovies(url, onComplete, onError){

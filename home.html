@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Search API</title>
+    <title></title>
+        <script>
+          var ScrollMsg= "Movie Search API"
+          var CharacterPosition=0;
+          function StartScrolling() {
+          document.title=ScrollMsg.substring(CharacterPosition,ScrollMsg.length)+
+          ScrollMsg.substring(0, CharacterPosition);
+          CharacterPosition++;
+          if(CharacterPosition > ScrollMsg.length) CharacterPosition=0;
+          window.setTimeout("StartScrolling()",150); }
+          StartScrolling();
+      </script>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -16,6 +27,20 @@
     <main>
         <div class="search-bar">
             <div class="container">
+                    <center>
+                        <div class="content">
+                            <h1>MoviesInfo: Information about over 10k+ movies</h1>
+                            <p>
+                                Welcome to
+                                <span style="font-weight:bold; color: #6AC045">MoviesInfo</span> | It is site where you can view information about your favourite movie.
+                                MoviesInfo are best known for the excellent
+                                <span style="font-weight:bold; color: #6AC045">Information</span> for each and every released and not released movies. We are providing
+                                this information by the help of
+                                <span style="font-weight:bold; color: #6AC045">MovieDB </span> which known for their movies resources.
+                                <span style="font-weight:bold; color: #6AC045">Browse</span> Movie and get detail aspect of your favourite movie.
+                            </p>
+                        </div>
+                    </center>
                 <form>
                     <!-- <div class="form-group">
                         <select name="typeValue" id="typeValue">
@@ -40,6 +65,26 @@
         </div>
     </main>
     <!-- main ends -->
+    <section class="request">
+        <div class="container req-box">
+            <form action="../controller/req.php" method="post">
+                <div class="row">
+                    <div class="req-column">
+                        <h3 style="margin-bottom:50px;"><span style="font-weight:bold; color: #6AC045">Movie Request</span></h3>
+                        <label for="title">Movie Title:</label><br>
+                        <input type="text" name="title" class="input" requireds=""><br>
+                        <label for="message">Request Message(Optional):</label><br>
+                        <textarea name="msg" cols="30" rows="5" class="input"></textarea>
+                        <input type="submit" class="btn" value="Send Request">
+                    </div>
+                    <div class="req-column"></div>
+                        <p class="content">We try our best to upload every request our users make. Sadly we can not give a 100% guarantee that we will upload your movie in a given time frame, but we will try our best!</p>
+                        <p class="content" style="margin-top:30px;">To help us, please provide as much information about the movie you want to be uploaded. It will help if you can give IMDb links.</p>
+                    </div>
+                </div>   
+            </form>
+        </div>
+    </section>
     <!-- footer starts -->
     <footer>Copyright 2020 &#169; Movie Search API</footer>
     <!-- footer ends -->
