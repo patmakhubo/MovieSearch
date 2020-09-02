@@ -2,7 +2,7 @@
 const MOVIE_DB_API = 'd8bf019d0cca372bd804735f172f67e8';
 const MOVIE_DB_ENDPOINT = 'https://api.themoviedb.org';
 const MOVIE_DB_IMAGE_ENDPOINT = 'https://image.tmdb.org/t/p/w500';
-const DEFAULT_POST_IMAGE = 'https://via.placeholder.com/150';
+const DEFAULT_POST_IMAGE = 'https://via.placeholder.com/200';
 
 function requestMovies(url, onComplete, onError) {
     fetch(url)
@@ -25,18 +25,27 @@ function getTopRatedMovies() {
 
 function getTrendingMovies() {
     const url = generateMovieDBUrl('/trending/movie/day');
-    const render = renderMovies.bind({ title: 'Trending Movies' })
+    const render = renderMovies.bind({ title: 'Trending Movies Today' })
+    requestMovies(url, render, handleGeneralError);
+}
+function getLatestTVShows() {
+    const url = generateMovieDBUrl('/tv/top_rated');
+    const render = renderMovies.bind({ title: ' Top Rated TV Shows' })
+    requestMovies(url, render, handleGeneralError);
+}
+function getPopularTVShows() {
+    const url = generateMovieDBUrl('/tv/popular');
+    const render = renderMovies.bind({ title: ' Top Rated TV Shows' })
     requestMovies(url, render, handleGeneralError);
 }
 
-
-function searchUpcomingMovies() {
+function getUpcomingMovies() {
     const url = generateMovieDBUrl('/movie/upcoming');
     const render = renderMovies.bind({ title: 'Upcoming Movies' })
     requestMovies(url, render, handleGeneralError);
 }
 
-function searchPopularMovie() {
+function getPopularMovie() {
     const url = generateMovieDBUrl('/movie/popular');
     const render = renderMovies.bind({ title: 'Popular Movies' });
     requestMovies(url, render, handleGeneralError);

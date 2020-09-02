@@ -1,9 +1,9 @@
 // Initial Values
-const INITIAL_SEARCH_VALUE = 'spiderman';
+const INITIAL_SEARCH_VALUE = 'a';
 const log = console.log;
 
 // Selecting elements from the DOM
-const searchButton = document.querySelector('#search');;
+const searchButton = document.querySelector('#search');
 const searchInput = document.querySelector('#exampleInputEmail1');
 const moviesContainer = document.querySelector('#movies-container');
 const moviesSearchable = document.querySelector('#movies-searchable');
@@ -161,7 +161,9 @@ document.onclick = function (event) {
 
 // Initialize the search
 searchMovie(INITIAL_SEARCH_VALUE);
-searchUpcomingMovies();
+getUpcomingMovies();
 getTopRatedMovies();
-searchPopularMovie();
+getPopularMovie();
 getTrendingMovies();
+getLatestTVShows();
+getPopularTVShows();

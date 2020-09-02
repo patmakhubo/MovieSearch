@@ -6,11 +6,12 @@
         // Escape user inputs for security
         $DB = DBController::getInstance();
         $connection = $DB->getConnection();
-        $title = $connection->real_escape_string($_REQUEST['title-dropdown']);
-        $firstname = $connection->real_escape_string($_REQUEST['firstname']);
+        $title = $connection->real_escape_string($_REQUEST['movietitle']);
+        $firstname = $connection->real_escape_string($_REQUEST['name']);
         $email = $connection->real_escape_string($_REQUEST['email']);
         $message = $connection->real_escape_string($_REQUEST['message']);
-        $time = $this->getTimeStamp();
+        $t = new timestamp();
+        $time = $t->getTimeStamp();
         // Attempt insert query execution
         $sqli = 'INSERT INTO `request` (`name`,`email`,`title`,`message`,`timecreated`) VALUES 
         (?,?,?,?,?)';
@@ -20,12 +21,12 @@
             mysqli_stmt_execute($stmt);
             $_SESSION["SuccessMessage"] ="Records inserted successfully.";
             setcookie("SuccessMessage",$_SESSION["SuccessMessage"], time()+86400/24, "/");
-            header("Location: /index.html");
+            header("Location: ../MovieSearch/index.html");
             exit();
         } else{
             $_SESSION["ErrorMessage"] ="ERROR: Could not execute"; //$sql. " . $connection->error;
             setcookie("ErrorMessage",$_SESSION["ErrorMessage"], time()+86400/24, "/");
-            header("Location: /index.html");
+            header("Location: ../MovieSearch/index.html");
             exit();
         }
         // Close connection

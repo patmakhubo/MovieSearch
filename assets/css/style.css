@@ -1,11 +1,29 @@
 
 html {
     scroll-behavior: smooth;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.99),rgba(192, 183, 183, 0.9)), url(../img/wp1945897-movie-posters-wallpapers.jpg);
+    image-rendering: optimizeQuality;
 }
-
-
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 800;
+}
+h1 {
+    font-size: 72px;
+}
+h2 {
+    font-size: 60px;
+}
+h3 {
+    font-size: 48px;
+}
+h4,p {
+    font-size: 36px;
+}
 body {
     margin: 0;
+
 }
 
 .container {
@@ -65,6 +83,7 @@ section .imageContainer {
     cursor: pointer;
     position: absolute;
     top: 20px;
+    background-color: red;
     padding: 10px;
     /* width: 35px;; */
     border: 1px solid lightgrey;
@@ -137,9 +156,9 @@ button[type=reset] {
   background-color: maroon !important;
 }
 #regForm {
-    background-color: #ffffff;
     margin: 50px auto;
     font-family: Raleway;
+    font-size: 24px;
     width: 70%;
     min-width: 300px;
   }
