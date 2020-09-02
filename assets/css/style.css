@@ -1,33 +1,119 @@
-/* 
-----------------------------------------------------------
-header starts
-----------------------------------------------------------
-*/
-#title {
-    text-align: center;
+
+html {
+    scroll-behavior: smooth;
 }
-/* 
-----------------------------------------------------------
-header ends
-----------------------------------------------------------
-*/
-/* 
-----------------------------------------------------------
-main starts
-----------------------------------------------------------
-*/
+
+
+body {
+    margin: 0;
+}
+
 .container {
+    padding: 20px;
     margin: 0 auto;
-    padding: 2% 10%;
+}
+
+.movie {
+    margin-top: 50px;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 3rem 0;
+    transition: 250ms all;
+}
+
+section .imageContainer {
+    flex: 0 0 auto;
+}
+
+.content {
+    display: none;
+    position: relative;
+    min-height: 200px;
+    width: 100%;
+    border: 1px solid lightgrey;
+    padding: 20px;
+}
+
+
+.content-display {
+    display: block;
+}
+
+
+.content-display {
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.content div {
+    margin: 10px;
+}
+
+
+#content-close {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    padding: 10px;
+    /* width: 35px;; */
+    border: 1px solid lightgrey;
+    border-radius: 45%;
+    left: 20px;
+}
+
+
+.imageContainer {
+    transition: 250ms all;
+    width: 300px;
+}
+
+
+.imageContainer:hover {
+    margin-left: 0 40px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.imageContainer {
+    cursor: pointer;
+}
+
+.imageContainer img {
+    width: 100%;
+}
+
+.btn {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    outline: none;
+    min-height: 38px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
 }
 
 .form-group {
-    margin: 0 auto;
-    display: inline;
+    margin-bottom: 1rem;
 }
-/* Input Value */
-#inputValue{
-    max-width: 65%;
+
+.form-control {
+    width: 760px;
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -39,81 +125,6 @@ main starts
     border: 1px solid #ced4da;
     border-radius: .25rem;
 }
-/* Search button */
-#search {
-    color: #fff;
-    background-color:#007bff;
-    outline: none;
-    min-height: 38px;
-    font-weight: 400;
-    text-align: center;
-    cursor: pointer;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-}
-#search:hover {
-    background-color:#008000;
-}
-#movies-searchable {
-    margin-top: 20px;
-    width: 93% !important;
-}
-/* Image results section start */
-.section {
-    display: flex;
-    overflow-x: scroll;
-    width: 100%;
-    padding: 3rem 0;
-}
-.movie {
-    padding: 2rem auto;
-}
-.section::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
-  }
-section img {
-    width: 300px;
-    transition: 250ms all;
-}
-
-img:hover {
-    transform: scale(1.2);
-    margin-left: 0 40px;
-    cursor: pointer;
-    border: 1px outset grey;
-}
-
-.content {
-    border: 1px solid red;
-    display: none;
-}
-.content div {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 10px;
-}
-.content-display {
-    display: block;
-}
-span {
-    font-weight:bold; color: dodgerblue;
-}
-h1,h3 {
-    text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-/* 
-----------------------------------------------------------
-main ends
-----------------------------------------------------------
-*/
-
 .req-column {
     margin: 0 25%; 
 }
@@ -122,33 +133,34 @@ main ends
 Registration form
 ----------------------------------------------------------
 */
+button[type=reset] {
+  background-color: maroon !important;
+}
 #regForm {
     background-color: #ffffff;
-    margin: 100px auto;
+    margin: 50px auto;
     font-family: Raleway;
-    padding: 40px;
     width: 70%;
     min-width: 300px;
   }
 
-  
+ fieldset {
+   border: hidden;
+ } 
   input, textarea {
     padding: 10px ;
-    width: 100%;
+    width: 97%;
     font-size: 19px;
     font-family: Raleway;
     border: 1px solid #2aa7a7;
     border-radius: 0.25rem;
   }
-  
+  textarea {
+    min-height: 150px;
+  }
   /* Mark input boxes that gets an error on validation: */
   input.invalid, textarea.invalid {
     background-color: #da5a5a;
-  }
-  
-  /* Hide all steps by default: */
-  .tab {
-    display: none;
   }
   
   button {
@@ -175,33 +187,6 @@ Registration form
     transform: translateX(4px);
   }
   
-  #prevBtn {
-    background-color: red;
-    border-radius: 0.25rem;
-  }
-  
-  /* Make circles that indicate the steps of the form: */
-  .step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #b6b5b5;
-    border: none;  
-    border-radius:20%;
-    display: inline-block;
-    opacity: 0.75;
-  }
-  
-  .step.active {
-    opacity: 1;
-  }
-  .dots {
-    text-align:center;margin-top:40px;
-  }
-  /* Mark the steps that are finished and valid: */
-  .step.finish {
-    background-color: #4CAF50;
-  }
 /*
 ----------------------------------------------------------
 Registration form

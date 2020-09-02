@@ -1,41 +1,56 @@
-//TMDB Initial Values
-const API_KEY = '5ec279387e9aa9488ef4d00b22acc451';
-//getCookie('tmdbapikey');
-// Endpoint
-const endpoint = 'http://api.themoviedb.org/3/search/movie?api_key='+API_KEY;
-// getCookie('tmdbendpointurl');
-const movieURL = 'https://image.tmdb.org/t/p/w500';
+// Initial Values
+const MOVIE_DB_API = 'd8bf019d0cca372bd804735f172f67e8';
+const MOVIE_DB_ENDPOINT = 'https://api.themoviedb.org';
+const MOVIE_DB_IMAGE_ENDPOINT = 'https://image.tmdb.org/t/p/w500';
+const DEFAULT_POST_IMAGE = 'https://via.placeholder.com/150';
 
-function generateURL(path){
-    return `http://api.themoviedb.org/3${path}?api_key=${API_KEY}`;
-}
-function searchMovie(value) {
-    const path = '/search/movie';
-    const url = generateURL(path) + "&query=" + value;
-
-    requestMovies(url, renderSearchMovies, handleError);
-}
-function requestMovies(url, onComplete, onError){
-    fetch(url).then((res) => res.json()).then(onComplete).catch(onError);
+function requestMovies(url, onComplete, onError) {
+    fetch(url)
+        .then((res) => res.json())
+        .then(onComplete)
+        .catch(onError);
 }
 
-function getUpcomingMovies() {
-    const path = '/movie/upcoming';
-    const url = generateURL(path);
-
-    requestMovies(url, renderSearchMovies, handleError);
+function generateMovieDBUrl(path) {
+    const url = `${MOVIE_DB_ENDPOINT}/3${path}?api_key=${MOVIE_DB_API}`;
+    return url;
 }
 
 
 function getTopRatedMovies() {
-    const path = '/movie/top_rated';
-    const url = generateURL(path);
-
-    requestMovies(url, renderSearchMovies, handleError);
+    const url = generateMovieDBUrl(`/movie/top_rated`);
+    const render = renderMovies.bind({ title: 'Top Rated Movies' })
+    requestMovies(url, render, handleGeneralError);
 }
-function  {
-    const path = '/movie/popular';
-    const url = generateURL(path);
 
-    requestMovies(url, renderSearchMovies, handleError);
+function getTrendingMovies() {
+    const url = generateMovieDBUrl('/trending/movie/day');
+    const render = renderMovies.bind({ title: 'Trending Movies' })
+    requestMovies(url, render, handleGeneralError);
+}
+
+
+function searchUpcomingMovies() {
+    const url = generateMovieDBUrl('/movie/upcoming');
+    const render = renderMovies.bind({ title: 'Upcoming Movies' })
+    requestMovies(url, render, handleGeneralError);
+}
+
+function searchPopularMovie() {
+    const url = generateMovieDBUrl('/movie/popular');
+    const render = renderMovies.bind({ title: 'Popular Movies' });
+    requestMovies(url, render, handleGeneralError);
+}
+
+// Invoke a different function for search movies
+function searchMovie(value) {
+    const url = generateMovieDBUrl('/search/movie') + '&query=' + value;
+    requestMovies(url, renderSearchMovies, handleGeneralError);
+}
+
+
+function getVideosByMovieId(movieId, content) {
+    const url = generateMovieDBUrl(`/movie/${movieId}/videos`);
+    const render = createVideoTemplate.bind({ content });
+    requestMovies(url, render, handleGeneralError);
 }
