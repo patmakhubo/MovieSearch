@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-    padding: 20px;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -63,22 +63,61 @@ section .imageContainer {
 
 .content-display {
     display: block;
-}
-
-
-.content-display {
-    display: block;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
 }
-
+.search-bar{
+    margin: 2rem 0;
+}
 .content div {
     margin: 10px;
 }
-
-
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    overflow: hidden;
+    clear: both;
+    position: fixed;
+    left: 0;
+    z-index: 9999; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+body {
+    font: italic small-caps normal 24px/150% Arial, Helvetica, sans-serif;
+  }
+#logo{
+    width: 150px;
+}
+header {
+    height: 50vh;
+    padding: 15% 20%;
+    color: #2aa7a7;
+    text-shadow: #495057;
+    background-image: url(/assets/img/jumble.jpg);
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+input[value="Login"],input[value="Signup"]{
+    border: none;
+    background-color: unset;
+    padding: 1rem 2rem;
+    font-size: 30px;
+}
+input[value="Login"]:hover,input[value="Signup"]:hover{
+    border: black;
+    background-color: lightcyan;
+}
+div ul{
+    list-style: none;
+    display: flex;
+}
 #content-close {
     cursor: pointer;
     position: absolute;
@@ -95,16 +134,13 @@ section .imageContainer {
 .imageContainer {
     transition: 250ms all;
     width: 300px;
+    cursor: pointer;
 }
 
 
 .imageContainer:hover {
     margin-left: 0 40px;
     transform: scale(1.2);
-    cursor: pointer;
-}
-
-.imageContainer {
     cursor: pointer;
 }
 
@@ -128,7 +164,8 @@ section .imageContainer {
 }
 
 .form-group {
-    margin-bottom: 1rem;
+    margin: 1rem auto;
+    display: inline;
 }
 
 .form-control {

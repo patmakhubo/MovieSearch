@@ -21,7 +21,7 @@ function resetForm(){
     inputMessage.value = '';
     inputTitle.value = '';
 }
-submitForm.onclick = function frm() {
+document.onload = function frm() {
     // event.preventDefault();
     if(getCookie('SuccessMessage').length > 0){
         alert(getCookie('SuccessMessage'));

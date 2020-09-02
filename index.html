@@ -20,17 +20,11 @@
   </head>
   <body>
     <div class="container">
-      <h1>Posters and Trailors for over 10k+ movies can be found here</h1>
-      <p>
-          Welcome to
-          <span>The Movie Search API</span>. It's site where you can view information about your favourite movie.
-          The Movie Search API are best known for the excellent
-          <span>Information</span> for each and every released and not released movies. We are providing
-          this information by the help of
-          <span>TheMovieDB </span> which known for their movies resources.
-          <span>Browse</span> Movie and get detail aspect of your favourite movie.
-      </p>
-      <form>
+      <header>
+        <div>
+          <img src="/assets/img/logo.PNG" alt="logo" id="logo">
+        </div>
+        <form class="search-bar">
         <div class="form-group">
           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
             placeholder="Search..."
@@ -41,6 +35,24 @@
           Search a movie
         </button>
       </form>
+      <div>
+        <ul>
+          <li><input type="submit" value="Login"></li>
+          <li><input type="submit" value="Signup"></li>
+        </ul>
+      </div>
+    </header>
+      <h1>Posters and Trailors for over 10k+ movies can be found here</h1>
+      <p>
+          Welcome to
+          <span>The Movie Search API</span>. It's site where you can view information about your favourite movie.
+          The Movie Search API are best known for the excellent
+          <span>Information</span> for each and every released and not released movies. We are providing
+          this information by the help of
+          <span>TheMovieDB </span> which known for their movies resources.
+          <span>Browse</span> Movie and get detail aspect of your favourite movie.
+      </p>
+      
 
       <div id="movies-searchable"></div>
       <div id="movies-container"></div>
@@ -53,24 +65,25 @@
           <p class="cont">We try our best to upload every request our users make. Sadly we can not give a 100% guarantee that we will upload your movie in a given time frame, but we will try our best!</p>
           <p class="cont" style="margin-top:30px;">To help us, please provide as much information about the movie you want to be uploaded.</p>
       </div>
-      <form class="regForm"name="regForm"id="regForm" action="../MovieSearch/assets/php/connection.php">
+      <form method="POST" class="regForm"name="regForm"id="regForm" action="../MovieSearch/assets/php/connection.php">
           <label>Name:</label>
-          <p><input type="text" required placeholder="Full name..." class="name"id="name"></p>
+          <p><input type="text" required placeholder="Full name..." name="name" id="name"></p>
           <label>Email Address:</label>
-          <p><input type="email" required placeholder="Email-Address..." class="email"id="email"></p>
+          <p><input type="email" required placeholder="Email-Address..." name="email" id="email"></p>
           <label>Movie Title:</label>
-          <p><input type="text" required placeholder="Movie Title..." class="movietitle"id="movietitle"></p>
+          <p><input type="text" required placeholder="Movie Title..." name="movietitle" id="movietitle"></p>
           <label>Request Message (Optional):</label>
-          <p><textarea type="text" placeholder="Request Message..."class="message" id="message"></textarea></p>
-          <button id="reset" value="reset" type="reset">Reset</button>
-          <button id="submit" value="submit" type="submit">Submit</button>
+          <p><textarea type="text" placeholder="Request Message..." name="message" id="message"></textarea></p>
+          <button id="button" type="submit">submit</button>
+          <button id="button" type="reset">reset</button>
+                
       </form>
-      <script src="./assets/js/request.js"></script>
+      <!-- <script src="./assets/js/request.js"></script> -->
   </section>
   <!-- footer starts -->
   <footer>Copyright 2020 &#169; Movie Search API</footer>
   <!-- footer ends -->
-    <script src="./assets/js/apiTransaction.js"></script>
-    <script src="./assets/js/app.js"></script>
+    <!-- <script src="./assets/js/apiTransaction.js"></script>
+    <script src="./assets/js/app.js"></script> -->
   </body>
 </html>

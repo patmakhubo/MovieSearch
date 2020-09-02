@@ -6,15 +6,14 @@
         // Escape user inputs for security
         $DB = DBController::getInstance();
         $connection = $DB->getConnection();
-        $title = $connection->real_escape_string($_REQUEST['movietitle']);
-        $firstname = $connection->real_escape_string($_REQUEST['name']);
-        $email = $connection->real_escape_string($_REQUEST['email']);
-        $message = $connection->real_escape_string($_REQUEST['message']);
+        $title = $connection->real_escape_string($_POST['movietitle']);
+        $firstname = $connection->real_escape_string($_POST['name']);
+        $email = $connection->real_escape_string($_POST['email']);
+        $message = $connection->real_escape_string($_POST['message']);
         $t = new timestamp();
         $time = $t->getTimeStamp();
         // Attempt insert query execution
-        $sqli = 'INSERT INTO `request` (`name`,`email`,`title`,`message`,`timecreated`) VALUES 
-        (?,?,?,?,?)';
+        $sqli = "INSERT INTO `request` (`name`,`email`,`title`,`message`,`timecreated`) VALUES (?,?,?,?,?)";
             $stmt = mysqli_stmt_init($connection);    
         if(mysqli_stmt_prepare($stmt, $sqli)){
             mysqli_stmt_bind_param($stmt, "sssss", $firstname, $email,  $title, $message, $time);
