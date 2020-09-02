@@ -9,18 +9,20 @@ resetForm.onclick = function(event) {
     event.preventDefault();
     const value = prompt("Are you sure? (type 1 or 2 only)\n1: Yes\n2: No");
     if(value == 1){
-        inputMessage.value = '';
-        inputEmail.value = '';
-        inputMessage.value = '';
-        inputTitle.value = '';
+        resetForm();
         alert('Form fields cleared');
     } else {
         alert('Not cleared');
     }
 }
+function resetForm(){
+    inputMessage.value = '';
+    inputEmail.value = '';
+    inputMessage.value = '';
+    inputTitle.value = '';
+}
 submitForm.onclick = function frm() {
     // event.preventDefault();
-    // document.getElementById('regForm').submit();
     if(getCookie('SuccessMessage').length > 0){
         alert(getCookie('SuccessMessage'));
     }else if(getCookie('ErrorMessage').length > 0){
@@ -28,6 +30,7 @@ submitForm.onclick = function frm() {
     }else {
         alert('No form record submitted');
     }
+    resetForm();
 }
   
 function getCookie(cookieName){

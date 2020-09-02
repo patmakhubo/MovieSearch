@@ -21,12 +21,12 @@
             mysqli_stmt_execute($stmt);
             $_SESSION["SuccessMessage"] ="Records inserted successfully.";
             setcookie("SuccessMessage",$_SESSION["SuccessMessage"], time()+86400/24, "/");
-            header("Location: ../MovieSearch/index.html");
+            header("Location: /MovieSearch/index.html");
             exit();
         } else{
             $_SESSION["ErrorMessage"] ="ERROR: Could not execute"; //$sql. " . $connection->error;
             setcookie("ErrorMessage",$_SESSION["ErrorMessage"], time()+86400/24, "/");
-            header("Location: ../MovieSearch/index.html");
+            header("Location: /MovieSearch/index.html");
             exit();
         }
         // Close connection

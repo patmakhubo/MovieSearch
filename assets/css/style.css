@@ -84,11 +84,11 @@ section .imageContainer {
     position: absolute;
     top: 20px;
     background-color: red;
-    padding: 10px;
+    padding: 2px 16px 6px;
     /* width: 35px;; */
     border: 1px solid lightgrey;
     border-radius: 45%;
-    left: 20px;
+    left: 5px;
 }
 
 
