@@ -4,7 +4,6 @@
 <?php
 echo 
 '
-<h1>Please Wait!</h1>
 <style>
 .dots-group {
     position: absolute;
