@@ -21,31 +21,3 @@ function resetForm(){
     inputMessage.value = '';
     inputTitle.value = '';
 }
-document.onload = function frm() {
-    // event.preventDefault();
-    if(getCookie('SuccessMessage').length > 0){
-        alert(getCookie('SuccessMessage'));
-    }else if(getCookie('ErrorMessage').length > 0){
-        alert(getCookie('ErrorMessage'));
-    }else {
-        alert('No form record submitted');
-    }
-    resetForm();
-}
-  
-function getCookie(cookieName){
-    var name = cookieName + "=";
-    var totCookies = document.cookie.split(';');
-    for(var i = 0; i < totCookies.length; i++){
-        var c = totCookies[i];
-        while(c.charAt(0) == ' '){
-            c = c.substring(1);
-            if(c.indexOf(name) == 0){
-                var relevantCookie = c.substring(name.length,c.length);
-                relevantCookie = relevantCookie.replace('%20', ' ');
-                return relevantCookie;
-            }
-        }
-    }
-    return "";
-  }

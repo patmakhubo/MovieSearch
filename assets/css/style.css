@@ -32,7 +32,7 @@ body {
 }
 
 .movie {
-    margin-top: 50px;
+    margin-top: 8rem;
 }
 
 section {
@@ -59,7 +59,9 @@ section .imageContainer {
     border: 1px solid lightgrey;
     padding: 20px;
 }
-
+@media (max-width: 1589px) {
+    header{display: none;}
+}
 
 .content-display {
     display: block;
@@ -89,15 +91,20 @@ nav {
 body {
     font: italic small-caps normal 24px/150% Arial, Helvetica, sans-serif;
   }
+  .header-info {
+      padding: 3rem;
+      background-color: rgba(255, 255, 255, 0.87);
+      border-radius: 2rem;
+  }
 #logo{
     width: 150px;
 }
 header {
     height: 50vh;
     padding: 15% 20%;
-    color: #2aa7a7;
+    color: rgb(248, 0, 0);
     text-shadow: #495057;
-    background-image: url(/assets/img/jumble.jpg);
+    background-image: url(../img/jumble.jpg);
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -149,36 +156,20 @@ div ul{
 }
 
 .btn {
-    color: #fff;
     background-color: #007bff;
-    border-color: #007bff;
-    outline: none;
     min-height: 38px;
-    font-weight: 400;
-    text-align: center;
     cursor: pointer;
-    padding: .375rem .75rem;
-    font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
 }
 
 .form-group {
-    margin: 1rem auto;
-    display: inline;
+    margin: auto;
+    display: inline-flex;
 }
 
 .form-control {
-    width: 760px;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
     line-height: 1.5;
-    outline: none;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
     border-radius: .25rem;
 }
 .req-column {
@@ -258,7 +249,7 @@ footer {
     text-align: center;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 1rem;
-
+    background-color: white;
 }
 /*
 ----------------------------------------------------------

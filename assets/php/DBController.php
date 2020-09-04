@@ -32,7 +32,8 @@
             return $this->conn;
         }  
         private function __clone() {
-            return null;
+            return self::getInstance();
         }
+        
     }
 ?>
